@@ -19,12 +19,3 @@ parts:
     plugin: dump
     organize:
       '*': launchers/
-
-apps:
-  classic-launch:
-    adapter: full
-    command: bash
-    command-chain:
-    - bin/classic-launch
-    environment:
-      SNAP_ARCH_TRIPLET: $SNAPCRAFT_ARCH_TRIPLET
