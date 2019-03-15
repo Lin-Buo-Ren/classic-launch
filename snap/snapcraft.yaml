@@ -22,4 +22,4 @@ parts:
     source: snap/local/launchers
     plugin: dump
     organize:
-      '*': launchers/
+      '*': bin/
