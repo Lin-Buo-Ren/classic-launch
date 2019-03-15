@@ -11,7 +11,8 @@ description: |
       _snapcraft_forum_topic_url_
 
 grade: stable
-confinement: classic
+# As this is a stage snap classic confinement isn't needed
+confinement: strict
 
 # We only ship launcher here, don't do duplicate work
 # Build on s390x architecture as the build machine is least busy
