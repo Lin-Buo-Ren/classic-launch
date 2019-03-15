@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # Environment setting launcher for classic confinement snaps
 # This launcher gives priority to in-snap external command and library searching, making classic confinement snaps behave "like" strict confinement snaps.  This launcher should be dropped if the snap isn't in classic confinement.
-# This launcher depend on the workaround-snap-arch-triplet remote part, run the `workaround-snap-arch-triplet-launch` launcher before this launcher
 # https://github.com/Lin-Buo-Ren/snap-arch-triplet-part
 # 林博仁(Buo-ren, Lin) <Buo.Ren.Lin@gmail.com> © 2018
 
