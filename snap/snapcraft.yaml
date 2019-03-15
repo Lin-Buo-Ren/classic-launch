@@ -5,10 +5,7 @@ base: core18
 version: git
 summary: Setup the environment for classic confined snaps
 description: |
-  This stage snap ships a launcher to set-up proper environment for snaps in classic confinement.  Refer the following snapcraft forum topic for more info regarding the use of this snap:
-
-      _snapcraft_forum_topic_title_
-      _snapcraft_forum_topic_url_
+  This stage snap ships a launcher to set-up proper environment for snaps in classic confinement.  Refer [the snapcraft forum topic](https://forum.snapcraft.io/t/the-classic-launch-stage-snap/10441) for more info regarding the use of this stage snap.
 
 grade: stable
 # As this is a stage snap classic confinement isn't needed
