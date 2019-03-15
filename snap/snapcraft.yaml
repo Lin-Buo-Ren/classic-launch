@@ -1,0 +1,30 @@
+name: classic-launch
+title: The classic-launch Launcher Stage Snap
+# FIXME: Should use `bare` adapter when available
+base: core18
+version: git
+summary: Setup the environment for classic confined snaps
+description: |
+  This stage snap ships a launcher to set-up proper environment for snaps in classic confinement.  Refer the following snapcraft forum topic for more info regarding the use of this snap:
+
+      _snapcraft_forum_topic_title_
+      _snapcraft_forum_topic_url_
+
+grade: stable
+confinement: classic
+
+parts:
+  main:
+    source: snap/local/launchers
+    plugin: dump
+    organize:
+      '*': launchers/
+
+apps:
+  classic-launch:
+    adapter: full
+    command: bash
+    command-chain:
+    - bin/classic-launch
+    environment:
+      SNAP_ARCH_TRIPLET: $SNAPCRAFT_ARCH_TRIPLET
