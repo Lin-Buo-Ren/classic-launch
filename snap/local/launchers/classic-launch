@@ -10,11 +10,11 @@ set \
 	-o nounset \
 	-o pipefail
 
-if ! test -v SNAP_ARCH_TRIPLET; then
+if ! test -v X_DEBIAN_MULTIARCH_TRIPLET; then
 	# Markdown code syntax is not tilde expansion
 	# shellcheck disable=SC2016
 	printf -- \
-		'classic-launch: Error: Packaging bug!  Please set the SNAP_ARCH_TRIPLET environment variable to $SNAPCRAFT_ARCH_TRIPLET or run the `workaround-snap-arch-triplet-launch` launcher before `classic-launch`!\n' \
+		'classic-launch: Error: Packaging bug!  Please set the X_DEBIAN_MULTIARCH_TRIPLET environment variable by running the `debian-multiarch-triplet-provider-launch` launcher before `classic-launch`!\n' \
 		1>&2
 	exit 1
 fi
@@ -22,9 +22,9 @@ fi
 PATH="$SNAP"/usr/sbin:"$SNAP"/usr/bin:"$SNAP"/sbin:"$SNAP"/bin:"$PATH"
 
 if test -v LD_LIBRARY_PATH; then
-	LD_LIBRARY_PATH="$LD_LIBRARY_PATH":"$SNAP"/lib:"$SNAP"/usr/lib:"$SNAP"/lib/"${SNAP_ARCH_TRIPLET}":"$SNAP"/usr/lib/"${SNAP_ARCH_TRIPLET}":"$SNAP"/usr/lib/"${SNAP_ARCH_TRIPLET}"/mesa:"$SNAP"/usr/lib/"${SNAP_ARCH_TRIPLET}"/mesa-egl
+	LD_LIBRARY_PATH="$LD_LIBRARY_PATH":"$SNAP"/lib:"$SNAP"/usr/lib:"$SNAP"/lib/"${X_DEBIAN_MULTIARCH_TRIPLET}":"$SNAP"/usr/lib/"${X_DEBIAN_MULTIARCH_TRIPLET}":"$SNAP"/usr/lib/"${X_DEBIAN_MULTIARCH_TRIPLET}"/mesa:"$SNAP"/usr/lib/"${X_DEBIAN_MULTIARCH_TRIPLET}"/mesa-egl
 else
-	LD_LIBRARY_PATH="$SNAP"/lib:"$SNAP"/usr/lib:"$SNAP"/lib/"${SNAP_ARCH_TRIPLET}":"$SNAP"/usr/lib/"${SNAP_ARCH_TRIPLET}":"$SNAP"/usr/lib/"${SNAP_ARCH_TRIPLET}"/mesa:"$SNAP"/usr/lib/"${SNAP_ARCH_TRIPLET}"/mesa-egl
+	LD_LIBRARY_PATH="$SNAP"/lib:"$SNAP"/usr/lib:"$SNAP"/lib/"${X_DEBIAN_MULTIARCH_TRIPLET}":"$SNAP"/usr/lib/"${X_DEBIAN_MULTIARCH_TRIPLET}":"$SNAP"/usr/lib/"${X_DEBIAN_MULTIARCH_TRIPLET}"/mesa:"$SNAP"/usr/lib/"${X_DEBIAN_MULTIARCH_TRIPLET}"/mesa-egl
 	export LD_LIBRARY_PATH
 fi
 LD_LIBRARY_PATH="$SNAP_LIBRARY_PATH":"$LD_LIBRARY_PATH"
