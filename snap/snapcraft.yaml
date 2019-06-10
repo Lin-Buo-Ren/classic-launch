@@ -1,7 +1,7 @@
 name: classic-launch
 title: The classic-launch Launcher Stage Snap
 # FIXME: Should use `bare` adapter when available
-base: core18
+base: core
 version: git
 summary: Setup the environment for classic confined snaps
 description: |
